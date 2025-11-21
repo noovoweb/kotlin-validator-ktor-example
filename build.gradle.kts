@@ -9,6 +9,8 @@ group = "com.noovoweb"
 version = "0.0.1-SNAPSHOT"
 description = "Demo project for Ktor with kotlin-validator"
 
+val kotlinValidatorVersion = "0.1.0-beta.1"
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
@@ -37,10 +39,10 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.5.15")
 
     // Validator
-    implementation("com.noovoweb:kotlin-validator-annotations:0.1.1")
-    implementation("com.noovoweb:kotlin-validator-runtime:0.1.1")
-    implementation("com.noovoweb:kotlin-validator-ktor:0.1.1")
-    ksp("com.noovoweb:kotlin-validator-ksp:0.1.1")
+    implementation("com.noovoweb:kotlin-validator-annotations:$kotlinValidatorVersion")
+    implementation("com.noovoweb:kotlin-validator-runtime:$kotlinValidatorVersion")
+    implementation("com.noovoweb:kotlin-validator-ktor:$kotlinValidatorVersion")
+    ksp("com.noovoweb:kotlin-validator-processor:$kotlinValidatorVersion")
 
     // Testing
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
