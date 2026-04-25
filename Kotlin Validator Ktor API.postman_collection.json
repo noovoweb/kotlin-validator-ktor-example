@@ -1,0 +1,424 @@
+{
+	"info": {
+		"_postman_id": "0f9aca70-6436-4c82-aea9-68655f77f14e",
+		"name": "Kotlin Validator Ktor API",
+		"description": "Collection for testing kotlin-validator integration with Ktor. Demonstrates all 62 built-in validators.\n\nBase URL: http://localhost:8082/ktor/api\n\nFeatures:\n- Automatic 422 error responses\n- Accept-Language header support (en/fr)\n- All 62 validators organized by category",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1510588"
+	},
+	"item": [
+		{
+			"name": "String Validators (20)",
+			"item": [
+				{
+					"name": "Email - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"test@example.com\"}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/string/email",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"string",
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Email - Invalid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "fr"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"invalid-email\"}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/string/email",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"string",
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "URL - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"url\": \"https://example.com\"}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/string/url",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"string",
+								"url"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UUID - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"uuid\": \"550e8400-e29b-41d4-a716-446655440000\"}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/string/uuid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"string",
+								"uuid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Required - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"value\": \"present\"}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/string/required",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"string",
+								"required"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Length - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"value\": \"valid\"}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/string/length",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"string",
+								"length"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pattern - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"code\": \"ABC\"}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/string/pattern",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"string",
+								"pattern"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Numeric Validators (11)",
+			"item": [
+				{
+					"name": "Min - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"age\": 25}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/numeric/min",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"numeric",
+								"min"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positive - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"amount\": 100.5}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/numeric/positive",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"numeric",
+								"positive"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Collection Validators (7)",
+			"item": [
+				{
+					"name": "NotEmpty - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"items\": [\"item1\", \"item2\"]}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/collection/not-empty",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"collection",
+								"not-empty"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Size - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"tags\": [\"tag1\", \"tag2\", \"tag3\"]}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/collection/size",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"collection",
+								"size"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scenario Tests",
+			"item": [
+				{
+					"name": "User Registration - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"john.doe@example.com\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"age\": 30,\n  \"address\": {\n    \"street\": \"123 Main St\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"zipCode\": \"10001\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/scenario/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"scenario",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Registration - Invalid (French)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "fr"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"john.doe.example.com\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"age\": 30,\n  \"address\": {\n    \"street\": \"123 Main St\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"zipCode\": \"10001\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/scenario/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"scenario",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"orderId\": \"550e8400-e29b-41d4-a716-446655440000\",\n  \"items\": [\n    {\n      \"productName\": \"Widget\",\n      \"quantity\": 2,\n      \"price\": 29.99\n    },\n    {\n      \"productName\": \"Gadget\",\n      \"quantity\": 1,\n      \"price\": 49.99\n    }\n  ],\n  \"totalAmount\": 109.97,\n  \"shippingAddress\": {\n    \"street\": \"456 Oak Ave\",\n    \"city\": \"Boston\",\n    \"state\": \"MA\",\n    \"zipCode\": \"02101\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/scenario/order",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"scenario",
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8082/ktor/api",
+			"type": "string"
+		}
+	]
+}
