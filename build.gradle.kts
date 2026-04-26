@@ -9,7 +9,7 @@ group = "com.noovoweb"
 version = "0.0.1-SNAPSHOT"
 description = "Demo project for Ktor with kotlin-validator"
 
-val kotlinValidatorVersion = "0.1.0-beta.1"
+val kotlinValidatorVersion = "0.1.0-beta.3"
 
 java {
     toolchain {
