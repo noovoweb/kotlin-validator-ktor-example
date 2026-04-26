@@ -100,10 +100,10 @@ fun Application.module() {
 ## Dependencies
 
 ```kotlin
-implementation("com.noovoweb:kotlin-validator-annotations:0.1.0-beta.1")
-implementation("com.noovoweb:kotlin-validator-runtime:0.1.0-beta.1")
-implementation("com.noovoweb:kotlin-validator-ktor:0.1.0-beta.1")
-ksp("com.noovoweb:kotlin-validator-processor:0.1.0-beta.1")
+implementation("com.noovoweb:kotlin-validator-annotations:0.1.0-beta.3")
+implementation("com.noovoweb:kotlin-validator-runtime:0.1.0-beta.3")
+implementation("com.noovoweb:kotlin-validator-ktor:0.1.0-beta.3")
+ksp("com.noovoweb:kotlin-validator-processor:0.1.0-beta.3")
 ```
 
 See `build.gradle.kts` for the full setup including the GitHub Packages repository block.
