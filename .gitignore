@@ -55,6 +55,5 @@ local.properties
 *.kotlin_module
 
 # Credentials and sensitive files
-gradle.properties
 local.properties
 secrets.properties
