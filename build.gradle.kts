@@ -1,7 +1,7 @@
 plugins {
-    kotlin("jvm") version "2.3.10"
-    kotlin("plugin.serialization") version "2.3.10"
-    id("com.google.devtools.ksp") version "2.3.6"
+    kotlin("jvm") version "2.3.21"
+    kotlin("plugin.serialization") version "2.3.21"
+    id("com.google.devtools.ksp") version "2.3.7"
     application
 }
 
@@ -18,18 +18,7 @@ java {
 }
 
 repositories {
-    mavenLocal()
     mavenCentral()
-    maven {
-        name = "GitHubPackages"
-        url = uri("https://maven.pkg.github.com/noovoweb/kotlin-validator")
-        credentials {
-            username = providers.gradleProperty("gpr.user").orNull
-                ?: System.getenv("GITHUB_ACTOR")
-            password = providers.gradleProperty("gpr.token").orNull
-                ?: System.getenv("GITHUB_TOKEN")
-        }
-    }
 }
 
 dependencies {
