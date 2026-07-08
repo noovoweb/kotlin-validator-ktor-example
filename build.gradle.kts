@@ -18,16 +18,19 @@ java {
 }
 
 repositories {
+    // Uncomment to test a locally published library build (./gradlew publishToMavenLocal)
+    // before it's released. Leave commented in commits so builds resolve from Maven Central.
+    // mavenLocal()
     mavenCentral()
 }
 
 dependencies {
     // Ktor server
-    implementation("io.ktor:ktor-server-core:2.3.12")
-    implementation("io.ktor:ktor-server-netty:2.3.12")
-    implementation("io.ktor:ktor-server-content-negotiation:2.3.12")
-    implementation("io.ktor:ktor-server-status-pages:2.3.12")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
+    implementation("io.ktor:ktor-server-core:3.5.1")
+    implementation("io.ktor:ktor-server-netty:3.5.1")
+    implementation("io.ktor:ktor-server-content-negotiation:3.5.1")
+    implementation("io.ktor:ktor-server-status-pages:3.5.1")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:3.5.1")
 
     // Kotlin
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -46,7 +49,7 @@ dependencies {
 
     // Testing
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
-    testImplementation("io.ktor:ktor-server-test-host:2.3.12")
+    testImplementation("io.ktor:ktor-server-test-host:3.5.1")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation(kotlin("stdlib-jdk8"))
 }
